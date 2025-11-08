@@ -11,18 +11,13 @@ export default function Products() {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
       .then((data) => {
-        const clothes = data.filter(
-          (product) => product.category?.name === "Electronics"
-        );
-        setProducts(clothes);
-        // console.log(clothes);
+        // const clothes = data.filter(
+        //   (product) => product.category?.name === "Clothes"
+        // );
+        setProducts(data);
       })
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
-
-  // const handleNextImg = () => {
-  //   setNextImg((prevImg) => (prevImg + 1) % 3);
-  // };
 
   return (
     <div>
@@ -49,6 +44,7 @@ export default function Products() {
               <p className="font-bold text-blue-600">${product.price}</p>
               <NavLink
                 to={`/product/${product.id}`}
+                target="_blank"
                 className="p-2 bg-blue-500 font-bold text-white rounded-md cursor-pointer hover:bg-blue-700"
               >
                 {"View Product -->"}

@@ -1,20 +1,21 @@
 import React from "react";
 import Logo from "../assets/Logo.svg";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <div>
       <nav className="bg-[#B6AE9F] border-gray-200  top-0 z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="https://flowbite.com/"
+          <NavLink
+            to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img src={Logo} className="h-8" alt="Flowbite Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Leaf And Paper
             </span>
-          </a>
+          </NavLink>
           <div className="flex md:order-2">
             <button
               type="button"
@@ -122,29 +123,49 @@ function Navbar() {
             </div>
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-[#C5C7BC]  md:p-0 md:dark:text-[#C5C7BC] "
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    (isActive ? "!text-[#C5C7BC]" : "") +
+                    " block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#C5C7BC] md:p-0 md:dark:hover:text-[#C5C7BC] dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  }
                   aria-current="page"
                 >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#C5C7BC]  md:p-0 md:dark:hover:text-[#C5C7BC] dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/products"
+                  className={({ isActive }) =>
+                    (isActive ? "!text-[#C5C7BC]" : "") +
+                    " block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#C5C7BC] md:p-0 md:dark:hover:text-[#C5C7BC] dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  }
+                >
+                  Products
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    (isActive ? "!text-[#C5C7BC]" : "") +
+                    " block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#C5C7BC] md:p-0 md:dark:hover:text-[#C5C7BC] dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  }
                 >
                   About
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#C5C7BC]  md:p-0 dark:text-white md:dark:hover:text-[#C5C7BC]  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) =>
+                    (isActive ? "!text-[#C5C7BC]" : "") +
+                    " block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#C5C7BC] md:p-0 md:dark:hover:text-[#C5C7BC] dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  }
                 >
                   Services
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

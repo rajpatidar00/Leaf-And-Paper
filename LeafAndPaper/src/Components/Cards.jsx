@@ -3,8 +3,8 @@ import Card from "./Card";
 
 function Cards() {
   return (
-    <div className="bg-gray-100 p-12">
-       <h2 className="text-3xl font-bold text-center mb-6">Testimonals</h2>
+    <div className="bg-gray-100 pt-12">
+       <h2 className="text-3xl font-bold text-center mb-3">Testimonals</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-100 p-4 gap-6 pt-10 ">
         <div className="flex items-center justify-center">
           <Card

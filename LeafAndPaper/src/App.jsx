@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import ProductList from "./Components/ProductList";
 import Hero from "./Pages/Hero";
 import ProductDetailPage from "./Pages/ProductDetailPage";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
         {/* Product Detail Page */}
         <Route path="/product/:id" element={<ProductDetailPage />} />
+        <Route path="/products" element={<ProductPage />} />
+        <Route path="*" element={<h2>Page Not Found</h2>} />
       </Routes>
     </>
   );
